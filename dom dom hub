@@ -6989,7 +6989,7 @@ end
 --------------------------------------------------------Donate-----------------------------------------------
 local discordLink = "https://discord.com/invite/7MYWGqD9pX"
 
-local stkContent = "9903042011"
+local stkContent = "8493999999999"
 local copyDiscordButton = Tabs.Donate:AddButton({
     Title = "Sao chép liên kết Discord",
     Icon = "clipboard",
@@ -7000,7 +7000,7 @@ local copyDiscordButton = Tabs.Donate:AddButton({
 })
 
 local copyStkButton = Tabs.Donate:AddButton({
-    Title = "STK Teckcombank",
+    Title = "STK mb",
     Icon = "clipboard",
     Callback = function()
         setclipboard(stkContent)
