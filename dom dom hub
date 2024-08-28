@@ -2518,30 +2518,6 @@ spawn(function()
         end
     end
 end)
-
-spawn(function() 
-    repeat
-        task.wait()
-    until game:IsLoaded()
-    repeat
-        task.wait()
-    until game.Players
-    repeat
-        task.wait()
-    until game.Players.LocalPlayer and game.Players.LocalPlayer.Team ~= nil 
-    wait(1.5)
-    require(game.ReplicatedStorage.Notification).new("<Color=Red>Sau Vài ngày chìm nghỉm<Color=/>"):Display()
-    wait(.5)
-    require(game.ReplicatedStorage.Notification).new("<Color=Red>Thì Night Hub đã trở lại!!!!!<Color=/>"):Display()
-    wait(.14)
-    require(game.ReplicatedStorage.Notification).new("<Color=Yellow>Hãy sử dụng Fluxus để có trải nghiệm tốt!!<Color=/>"):Display()
-    wait(.24)
-    require(game.ReplicatedStorage.Notification).new("<Color=Yellow>Tham gia disocrd để cập nhật thông tin mới nhất nhé<Color=/>"):Display()
-    wait(.29)
-    require(game.ReplicatedStorage.Notification).new("<Color=Yellow>Channel : LMNGAMING <Color=/>"):Display()
-    wait(.36)
-end)
-
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 local Window = OrionLib:MakeWindow({Name = "chưa nghĩ ra hub", HidePremium = false, IntroText = "chưanghĩrahub Library", SaveConfig = true, ConfigFolder = "chưa nghĩ ra hub"})
 
