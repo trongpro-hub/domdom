@@ -1492,22 +1492,7 @@ for i,v in pairs(game:GetService("Workspace").NPCs:GetChildren()) do
 end
 end
 
-if _G.Team == "Pirate" then
-    local pirateButton = chooseTeamGui.Container.Pirates.Frame.ViewportFrame.TextButton
-    if pirateButton then
-        pirateButton:MouseButton1Click()
-    end
-elseif _G.Team == "Marine" then
-    local marineButton = chooseTeamGui.Container.Marines.Frame.ViewportFrame.TextButton
-    if marineButton then
-        marineButton:MouseButton1Click()
-    end
-else
-    local pirateButton = chooseTeamGui.Container.Pirates.Frame.ViewportFrame.TextButton
-    if pirateButton then
-        pirateButton:MouseButton1Click()
-    end
-end
+
 
 function InfAb()
     if InfAbility then
@@ -2514,6 +2499,15 @@ R:AddButton({
         game:GetService("Lighting").LightingLayers:Destroy()
         game:GetService("Lighting").Sky:Destroy()
       end    
+})
+
+R:AddButton({
+    Name = "test",
+    Callback = function()
+        Game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-5357.1875, 314.0587158203125, -2494.434814453125)
+        wait(3)
+        topos(CFrame.new( -5069.060546875, 314.8587951660156, -2988.447265625))
+      end 
 })
 
 R:AddButton({
