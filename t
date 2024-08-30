@@ -2508,7 +2508,7 @@ R:AddButton({
         wait(1)
         Game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-5357.1875, 314.0587158203125, -2494.434814453125)
         wait(3)
-        humanoidRootPart.CFrame = CFrame.new(2952.8408203125, 2281.97900390625, -7216.93701171875)
+        topos(CFrame.new(2952.8408203125, 2281.97900390625, -7216.93701171875), 2)
     end 
 })
 
