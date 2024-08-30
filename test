@@ -2504,9 +2504,9 @@ R:AddButton({
 R:AddButton({
     Name = "test",
     Callback = function()
-        Game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-5357.1875, 314.0587158203125, -2494.434814453125)
-        wait(3)
-        topos(CFrame.new( -5069.060546875, 314.8587951660156, -2988.447265625))
+        Game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-12463.6025390625, 375.4897155761719, -7566.0830079125)
+        wait(2)
+        topos(CFrame.new(-5357.1875, 314.0587158203125, -2494.434814453125))
       end 
 })
 
