@@ -1492,13 +1492,20 @@ for i,v in pairs(game:GetService("Workspace").NPCs:GetChildren()) do
 end
 end
 
-if chooseTeamGui and chooseTeamGui.Visible then
-    if _G.Team == "Pirate" then
-        chooseTeamGui.Container.Pirates.Frame.ViewportFrame.TextButton.MouseButton1Click:Fire()
-    elseif _G.Team == "Marine" then
-        chooseTeamGui.Container.Marines.Frame.ViewportFrame.TextButton.MouseButton1Click:Fire()
-    else
-        chooseTeamGui.Container.Pirates.Frame.ViewportFrame.TextButton.MouseButton1Click:Fire()
+if _G.Team == "Pirate" then
+    local pirateButton = chooseTeamGui.Container.Pirates.Frame.ViewportFrame.TextButton
+    if pirateButton then
+        pirateButton:MouseButton1Click()
+    end
+elseif _G.Team == "Marine" then
+    local marineButton = chooseTeamGui.Container.Marines.Frame.ViewportFrame.TextButton
+    if marineButton then
+        marineButton:MouseButton1Click()
+    end
+else
+    local pirateButton = chooseTeamGui.Container.Pirates.Frame.ViewportFrame.TextButton
+    if pirateButton then
+        pirateButton:MouseButton1Click()
     end
 end
 
