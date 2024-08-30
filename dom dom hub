@@ -1492,33 +1492,7 @@ for i,v in pairs(game:GetService("Workspace").NPCs:GetChildren()) do
 end
 end
 
-local player = game.Players.LocalPlayer
-local teamService = game:GetService("Teams")
 
-local function autoPickTeam(teamName)
-    -- Kiểm tra xem có tồn tại đội với tên teamName
-    local targetTeam = teamService:FindFirstChild(teamName)
-
-    if targetTeam then
-        -- Gửi yêu cầu thay đổi đội đến server
-        local changeTeamRemote = game.ReplicatedStorage:FindFirstChild("ChangeTeam") -- Giả định tên của RemoteEvent để thay đổi đội
-
-        if changeTeamRemote then
-            changeTeamRemote:FireServer(targetTeam)
-            print("Đã chọn đội: " .. teamName)
-        else
-            print("Không tìm thấy RemoteEvent để thay đổi đội.")
-        end
-    else
-        print("Đội không tồn tại.")
-    end
-end
-
--- Tự động chọn đội khi người chơi gia nhập trò chơi
-game.Players.LocalPlayer.CharacterAdded:Connect(function()
-    -- Tự động chọn đội Marine
-    autoPickTeam("Marine") -- Thay "Marine" bằng "Pirate" nếu bạn muốn chọn đội Pirate
-end)
 
 function InfAb()
     if InfAbility then
@@ -2525,6 +2499,15 @@ R:AddButton({
         game:GetService("Lighting").LightingLayers:Destroy()
         game:GetService("Lighting").Sky:Destroy()
       end    
+})
+
+R:AddButton({
+    Name = "test",
+    Callback = function()-12463.6025390625, 375.4897155761719, -7566.0830079125
+        Game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-12463.6025390625, 375.4897155761719, -7566.0830079125)
+        wait(2)
+        topos(CFrame.new(-5357.1875, 314.0587158203125, -2494.434814453125))
+      end 
 })
 
 R:AddButton({
