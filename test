@@ -1513,7 +1513,9 @@ if game:GetService("Players").LocalPlayer.PlayerGui.Main:FindFirstChild("ChooseT
 				end
 			end
 		end
-	until game.Players.LocalPlayer.Team ~= nil
+	until game.Players.LocalPlayer.Team ~= nil and game:IsLoaded()
+	    game:GetService("Players").LocalPlayer.PlayerGui.Main.ChooseTeam.Container.Pirates.Frame.ViewportFrame.TextButton.MouseButton1Click:Connect(function()
+	end)
 end
 
 function InfAb()
