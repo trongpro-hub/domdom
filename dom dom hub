@@ -1492,28 +1492,35 @@ for i,v in pairs(game:GetService("Workspace").NPCs:GetChildren()) do
 end
 end
 
-if game:GetService("Players").LocalPlayer.PlayerGui.Main:FindFirstChild("ChooseTeam") then
+local player = game:GetService("Players").LocalPlayer
+local playerGui = player:WaitForChild("PlayerGui")
+local mainGui = playerGui:WaitForChild("Main")
+local chooseTeamGui = mainGui:WaitForChild("ChooseTeam")
+
+if chooseTeamGui then
 	repeat
 		wait()
-		if game:GetService("Players").LocalPlayer.PlayerGui:WaitForChild("Main").ChooseTeam.Visible == true then
+		-- Kiểm tra nếu GUI chọn đội đang hiển thị
+		if chooseTeamGui.Visible == true then
+			-- Kiểm tra giá trị của _G.Team
 			if _G.Team == "Pirate" then
-				for i, v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Main.ChooseTeam
-													 .Container.Pirates.Frame.ViewportFrame.TextButton.Activated)) do
+				-- Chọn đội Pirate
+				for i, v in pairs(getconnections(chooseTeamGui.Container.Pirates.Frame.ViewportFrame.TextButton.Activated)) do
 					v.Function()
 				end
 			elseif _G.Team == "Marine" then
-				for i, v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Main.ChooseTeam
-													 .Container.Marines.Frame.ViewportFrame.TextButton.Activated)) do
+				-- Chọn đội Marine
+				for i, v in pairs(getconnections(chooseTeamGui.Container.Marines.Frame.ViewportFrame.TextButton.Activated)) do
 					v.Function()
 				end
 			else
-				for i, v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Main.ChooseTeam
-													 .Container.Pirates.Frame.ViewportFrame.TextButton.Activated)) do
+				-- Nếu không xác định được đội, mặc định chọn Pirate
+				for i, v in pairs(getconnections(chooseTeamGui.Container.Pirates.Frame.ViewportFrame.TextButton.Activated)) do
 					v.Function()
 				end
 			end
 		end
-	until game.Players.LocalPlayer.Team ~= nil and game:IsLoaded()
+	until player.Team ~= nil and game:IsLoaded()
 end
 
 function InfAb()
